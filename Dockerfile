@@ -4,7 +4,7 @@ FROM debian:${VERSION}
 
 RUN export DEBIAN_FRONTEND=noninteractive && \
     apt update && \
-    apt -y install build-essential cmake \
+    apt -y install build-essential cmake git \
         gdb python3 clang-format
 
 CMD echo "C++ Dev"
