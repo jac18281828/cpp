@@ -5,6 +5,8 @@ on:
     branches: [ main ]
   pull_request:
     branches: [ main ]
+  release:
+    types: [created]
 
 jobs:
   build:
@@ -21,4 +23,9 @@ jobs:
       run: |
         docker build . --file Dockerfile --tag jac18281828/${{github.event.repository.name}}:$(date +%m%d%y)
         docker tag jac18281828/${{github.event.repository.name}}:$(date +%m%d%y) jac18281828/${{github.event.repository.name}}:latest
+    - name: Push the image
+      run:
         docker push jac18281828/${{github.event.repository.name}}
+      if: ${{ github.event_name == 'release' && github.event.action == 'created' }}
+        
+
