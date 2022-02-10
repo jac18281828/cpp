@@ -1,5 +1,4 @@
 ARG VERSION=stable-slim
-
 FROM debian:${VERSION} 
 
 RUN export DEBIAN_FRONTEND=noninteractive && \
@@ -14,4 +13,4 @@ RUN adduser jac
 RUN adduser jac sudo
 RUN echo '%jac ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
-CMD echo "Use USER=jac"
+CMD echo "Use USER jac"
