@@ -9,3 +9,6 @@ ARG VERSION=latest
 FROM jac18281828/cppdev:${VERSION} as builder
 ```
 
+Also available from [GitHub GHCR](https://github.com/jac18281828/cppdev/pkgs/container/cppdev)
+
+
