@@ -1,10 +1,13 @@
 name: Docker Image CI
 
 on:
-  push:
-    branches: [ main ]
+  workflow_dispatch:
   pull_request:
-    branches: [ main ]
+    branches:
+      - main
+  push:
+    branches:
+      - "*"
   release:
     types: [created]
 
@@ -43,7 +46,8 @@ jobs:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
-      - name: Build and Push
+      -
+        name: Build and Push
         uses: docker/build-push-action@v3
         with:
           context: .
@@ -53,4 +57,3 @@ jobs:
             ${{ env.REPOSITORY_PATH }}:v${{ github.event.release.tag_name }}
             ${{ env.REPOSITORY_PATH }}:${{ env.REPOSITORY_SHA }}
             ${{ env.REPOSITORY_PATH }}:latest
-        if: ${{ github.event_name == 'release' && github.event.action == 'created' }}
