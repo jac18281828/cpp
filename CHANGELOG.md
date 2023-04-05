@@ -1,3 +1,7 @@
+# 1.0.10 (2023-04-05)
+
+* push to ghcr
+
 # 1.0.9 (2023-04-05)
 
 * fix build action typo
