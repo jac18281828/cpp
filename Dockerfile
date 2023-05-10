@@ -3,7 +3,7 @@ FROM debian:stable-slim
 RUN export DEBIAN_FRONTEND=noninteractive && \
     apt update && \
         apt install -y -q --no-install-recommends \
-        sudo ca-certificates curl git \
+        sudo ca-certificates curl git gnupg2 \
         build-essential cmake gdb python3 clang-format
 RUN apt clean
 RUN rm -rf /var/lib/apt/lists/*
