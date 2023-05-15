@@ -1,7 +1,3 @@
-# 1.0.12 (2023-05-15)
-
-* g++-10 added dependency
-
 # 1.0.11 (2023-05-10)
 
 * add gpg for commit signing in codespaces
