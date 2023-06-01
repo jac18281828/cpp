@@ -20,4 +20,5 @@ LABEL org.label-schema.build-date=$BUILD_DATE \
     org.label-schema.vcs-url="git@github.com:jac18281828/cppdev.git" \
     org.label-schema.vendor="John Cairns" \
     org.label-schema.version=$VERSION \
-    org.label-schema.schema-version="1.0"
+    org.label-schema.schema-version="1.0" \
+    org.opencontainers.image.description="C++ Development Container with g++10"
