@@ -12,6 +12,8 @@ RUN useradd --create-home -s /bin/bash jac
 RUN usermod -a -G sudo jac
 RUN echo '%jac ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
+RUN g++ --version
+
 LABEL org.label-schema.build-date=$BUILD_DATE \
     org.label-schema.name="cppdev" \
     org.label-schema.description="C++ Development Container" \
@@ -21,4 +23,4 @@ LABEL org.label-schema.build-date=$BUILD_DATE \
     org.label-schema.vendor="John Cairns" \
     org.label-schema.version=$VERSION \
     org.label-schema.schema-version="1.0" \
-    org.opencontainers.image.description="C++ Development Container with g++10"
+    org.opencontainers.image.description="C++ Development Container"

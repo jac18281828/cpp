@@ -4,5 +4,5 @@ VERSION=$(git rev-parse HEAD | cut -c 1-10)
 
 PROJECT=jac18281828/cppdev
 
-docker build . -t ${PROJECT}:${VERSION} --build-arg VERSION=${VERSION} && \
+docker build . --progress=plain -t ${PROJECT}:${VERSION} --build-arg VERSION=${VERSION} && \
 	docker run --rm -i -t ${PROJECT}:${VERSION}
