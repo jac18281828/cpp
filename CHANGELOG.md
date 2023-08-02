@@ -1,3 +1,7 @@
+# 1.0.15 (2023-08-02)
+
+* fixing release versioning
+
 # 1.0.14 (2023-06-14)
 
 * lld high performance linker
