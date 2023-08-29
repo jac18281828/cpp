@@ -10,7 +10,7 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
 
 RUN useradd --create-home -s /bin/bash jac
 RUN usermod -a -G sudo jac
-RUN echo '%jac ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
+RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
 RUN g++ --version
 
