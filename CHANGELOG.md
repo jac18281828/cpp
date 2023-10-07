@@ -1,3 +1,7 @@
+# 1.0.16 (2023-10-07)
+
+* latest build
+
 # 1.0.15 (2023-08-02)
 
 * fixing release versioning
