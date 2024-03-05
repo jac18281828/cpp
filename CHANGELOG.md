@@ -1,3 +1,9 @@
+# 1.0.18 (2024-03-05)
+
+* valgrind
+* yamlfmt
+* rename cpp
+
 # 1.0.17 (2024-02-29)
 
 * update g++
