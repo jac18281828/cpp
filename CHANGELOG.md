@@ -1,3 +1,7 @@
+# 1.0.21 (2025-05-27)
+
+* yamlfmt fix version, update cpp
+
 # 1.0.20 (2024-03-13)
 
 * updated github actions

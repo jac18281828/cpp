@@ -1,12 +1,12 @@
 # Stage 1: Build yamlfmt
-FROM golang:1 AS go-builder
+FROM golang:1 AS yaml-builder
 # defined from build kit
 # DOCKER_BUILDKIT=1 docker build . -t ...
 ARG TARGETARCH
 
 # Install yamlfmt
 WORKDIR /yamlfmt
-RUN go install github.com/google/yamlfmt/cmd/yamlfmt@latest && \
+RUN go install github.com/google/yamlfmt/cmd/yamlfmt@v0.16.0 && \
     strip $(which yamlfmt) && \
     yamlfmt --version
 
@@ -30,7 +30,7 @@ RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
 ENV USER=cpp
 ENV PATH=${PATH}:/go/bin
-COPY --chown=${USER}:${USER} --from=go-builder /go/bin/yamlfmt /go/bin/yamlfmt
+COPY --chown=${USER}:${USER} --from=yaml-builder /go/bin/yamlfmt /go/bin/yamlfmt
 USER cpp
 RUN g++ --version
 
